@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Repeat — Damomartoover</title>
+  <style>
+    /* Make the text wrap and be readable */
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      line-height: 1.4;
+      padding: 2rem;
+      background: #fff;
+      color: #000;
+    }
+    #container {
+      white-space: normal;
+      word-break: break-word;
+    }
+  </style>
+</head>
+<body>
+  <h1>Repeating: Damomartoover</h1>
+  <div id="container" aria-live="off"></div>
+
+  <script>
+    // Change count to increase/decrease how many times it repeats
+    const word = 'Damomartoover';
+    const count = 2000; // number of repeats (adjust if you want more/less)
+    // Build the repeated string efficiently
+    let result = '';
+    for (let i = 0; i < count; i++) {
+      result += word + (i % 10 === 9 ? '\n' : ' '); // add a newline every 10 words for readability
+    }
+    document.getElementById('container').textContent = result;
+  </script>
+</body>
+</html>
